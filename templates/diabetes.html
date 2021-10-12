@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Diabetes</title>
+</head> 
+<body>
+	{% extends "template.html" %}
+	{% block content %}
+	<div id="intro" class="container-fluid view ">
+		<br><br>
+		<h1 class="text-center text-capitalize pt-5">Health checkup to see if you are at risk of diabetes.</h1>
+		<hr class="w-75 mx-auto pt-5">
+
+
+		<div class="row mb-5">
+			<div class="col-lg-6 col-md-6 col-12 my-auto">
+				<img src="../static/img/diabetes.jpeg" class="img-fluid">
+			</div>
+			<div class="col-lg-6 col-md-6 col-12">
+				<form action="{{ url_for('Diabetes')}}"method="post">
+					<div class="form-group">
+						<label for="glucose" class="form-label">Glucose Level</label>
+						<input type="text" name="glucose" id="glucose" class="form-control" placeholder="enter glucose level">
+					</div>
+
+					<div class="form-group">
+						<label for="insulin" class="form-label">Insulin</label>
+						<input type="text" name="insulin" id="insulin" class="form-control" placeholder="enter insulin">
+					</div>
+
+					<div class="form-group">
+						<label for="bmi" class="form-label">BMI</label>
+						<input type="text" name="bmi" id="bmi" class="form-control" placeholder="enter bmi">
+					</div>
+
+					<div class="form-group">
+						<label for="age" class="form-label">Age</label>
+						<input type="text" name="age" id="age" class="form-control" placeholder="enter age">
+					</div>
+					<button type="submit" class="btn btn-danger">Predict</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div>
+
+		{% endblock %}
+	</body>
+	</html>

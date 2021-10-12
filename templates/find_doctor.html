@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Find Doctor</title>
+  <script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+      location.href = "https://www.practo.com/mumbai/general-physician";
+    };
+  </script>
+</head>
+<body>
+  {% extends "template.html" %}
+  {% block content %}
+
+  
+  <div class="jumbotron">
+    <h1>Doctor Lookup</h1>
+  </div>
+  <div class="container">
+    <form id="doctor-search">
+      <h3>Where are you?</h3>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input id="address" type="text" class="form-control" placeholder="enter your address" required>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>What's bugging you?</h3>
+          <div class="form-group">
+            <label for="query">Medical issue:</label>
+            <input id="query" type="text" class="form-control" placeholder="e.g. sore throat">
+          </div>
+        </div>
+        
+      </div>
+      <button type="submit" id="myButton" onclick="location.href = 'https://www.practo.com/mumbai/general-physician'; name="button" class="btn-lg btn-primary">Find a Doctor</button>
+    </form>
+    
+    
+  </div>
+  {% endblock %}
+</body>
+</html>

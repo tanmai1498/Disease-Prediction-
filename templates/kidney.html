@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Kidney Disease</title>
+</head> 
+<body>
+	{% extends "template.html" %}
+	{% block content %}
+	<div id="intro" class="container-fluid view ">
+		<br><br>
+		<h1 class="text-center text-capitalize pt-5">Health checkup to see if you are at risk of kidney disease.</h1>
+		<hr class="w-75 mx-auto pt-5">
+	
+
+	<div class="row mb-5">
+	<div class="col-lg-6 col-md-6 col-12 my-auto">
+		<img src="../static/img/kidney.png" class="img-fluid">
+	</div>
+	
+		<div class="col-lg-6 col-md-6 col-12">
+			<form action="{{ url_for('Kidney')}}"method="post">
+				<div class="form-group">
+					<label for="sg" class="form-label">Specific gravity</label>
+					<input type="text" name="sg" id="sg" class="form-control" placeholder="enter Specific gravity">
+				</div>
+
+				<div class="form-group">
+					<label for="al" class="form-label">Albumin</label>
+					<input type="text" name="al" id="al" class="form-control" placeholder="enter Albumin">
+				</div>
+
+				<div class="form-group">
+					<label for="sc" class="form-label">sc</label>
+					<input type="text" name="sc" id="sc" class="form-control" placeholder="enter Sc">
+				</div>
+
+				<div class="form-group">
+					<label for="hemo" class="form-label">hemo</label>
+					<input type="text" name="hemo" id="hemo" class="form-control" placeholder="enter hemo">
+				</div>
+
+				<div class="form-group">
+					<label for="pcv" class="form-label">pcv</label>
+					<input type="text" name="pcv" id="pcv" class="form-control" placeholder="enter pcv">
+				</div>
+
+				<div class="form-group">
+					<label for="wc" class="form-label">wc</label>
+					<input type="text" name="wc" id="wc" class="form-control" placeholder="enter wc">
+				</div>
+
+				<div class="form-group">
+					<label for="rc" class="form-label">rc</label>
+					<input type="text" name="rc" id="rc" class="form-control" placeholder="enter rc">
+				</div>
+
+				<div class="form-group">
+					<label for="htn" class="form-label">htn</label>
+					<input type="text" name="htn" id="htn" class="form-control" placeholder="htn">
+				</div>
+				<button type="submit" class="btn btn-danger">Predict</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div>
+       <center>
+   <h1>{{pred_text}}</h1>
+       </center>
+   </div>
+
+		{% endblock %}
+	</body>
+	</html>

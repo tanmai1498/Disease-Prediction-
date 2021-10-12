@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Disease Prediction</title>
+</head>   
+
+<body>
+  {% extends "template.html" %}
+  {% block content %}
+
+
+
+
+  <div>
+    <div >
+      <br><br>
+      <br>
+      <br>
+      <br>
+      <h1 class="text-center">Symptom Checker</h1>
+      <div>
+        <p class="text-center">Experiencing symptoms but not sure what they mean?use symptom checker to help determine the causes<br>
+        </p>
+      </div>
+
+      <div class="row">
+        <form action='/predict' method="post" class="col s12">
+          <div class="row">
+            <div class="input-field col s4" >
+              <label for="s1"><b>Symptom-1</b></label>
+              <br>
+              <input id="s1" name="Symptom1" placeholder="Enter symptom"  type="text" class="form-control">
+            </div>
+            <div class="input-field col s4" >
+
+              <label for="s2"><b> Symptom-2</b></label>
+              <br>
+              <input id="s2" name="Symptom2" placeholder="Enter symptom"  type="text" class="form-control">
+            </div>
+
+            <div class="input-field col s4">
+              <label for="s3"><b>Symptom-3</b></label>
+              <br>
+              <input id="s3" name="Symptom3" placeholder="Enter symptom" type="text" class="form-control">
+            </div>
+          </div>
+          <br>
+          <center>
+            <div>
+              <button type="submit" class="btn btn-danger ">Predict</button>
+            </div>
+          </center>
+        </form>
+      </div>
+      <br>
+      <br>
+      <br>
+
+      <!--<br>
+        {{pred}}
+        <br>-->
+        
+
+      </div>
+    </div>
+    <br><br>
+  </div>
+</div>>
+
+
+{% endblock %}
+</body>
+</html>

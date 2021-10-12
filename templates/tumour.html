@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>BreastCancer</title>
+</head> 
+<body>
+	{% extends "template.html" %}
+  {% block content %}
+  <div id="intro" class="container-fluid view ">
+    <br><br>
+    <h1 class="text-center text-capitalize pt-5">Health checkup to see if you are at risk of Breast Cancer disease.</h1>
+    <hr class="w-75 mx-auto pt-5">
+
+	 <div class="row mb-5">
+  <div class=" col my-auto">
+    <img src="../static/img/b.png" class="img-fluid"><br>
+    <img src="../static/img/b.png" class="img-fluid"><br>
+    <img src="../static/img/b.png" class="img-fluid"><br>
+    <!--<img src="../static/img/bcd.jpg" class="img-fluid rounded"><br>-->
+    
+  </div>
+        
+    	<div class="col-lg-6 col-md-6 col-6 float-right">
+		<form action="{{ url_for('BreastCancer')}}"method="post">
+      <div class="form-group">
+          <label for="mean_texture" class="form-label">mean texture</label><br>
+        <input type="text" name="mean_texture" class="form-control" id="mean_texture" placeholder="mean texture" required="required" />
+		</div>
+
+    <div class="form-group">
+          <label for="mean_area" class="form-label">mean area</label><br>
+		<input type="text" name="mean_area" class="form-control" id="mean_area" placeholder="mean area" required="required" />
+  </div>
+
+  <div class="form-group">
+          <label for="mean_smoothness" class="form-label">mean smoothness</label><br>
+        <input type="text" name="mean_smoothness" class="form-control" id="mean_smoothness" placeholder="mean smoothness" required="required" />
+      </div>
+
+      <div class="form-group">
+          <label for="mean_concavity" class="form-label">mean concavity</label><br>
+    	<input type="text" name="mean_concavity" class="form-control" id="mean_concavity" placeholder="mean concavity" required="required" />
+    </div>
+
+        <div class="form-group">
+          <label for="mean_symmetry" class="form-label">mean symmetry</label><br>
+		<input type="text" name="mean_symmetry" class="form-control" id="mean_symmetry" placeholder="mean symmetry" required="required" />
+  </div>
+
+  <div class="form-group">
+          <label for="mean_fractal_dimension" class="form-label">mean fractional dimension</label><br>
+    	<input type="text" name="mean_fractal_dimension" class="form-control" id="mean_fractal_dimension" placeholder="mean fractal dimension" required="required" />
+    </div>
+
+      <div class="form-group">
+          <label for="texture_error" class="form-label">texture error</label><br>
+        	<input type="text" name="texture_error" class="form-control" id="texture_error" placeholder="texture error" required="required" />
+		</div>
+
+    <div class="form-group">
+          <label for="area_error" class="form-label">area error</label><br>
+        <input type="text" name="area_error" class="form-control" id="area_error" placeholder="area error " required="required" />
+      </div>
+
+      <div class="form-group">
+          <label for="smoothness_error" class="form-label">smoothness_error</label><br>
+		<input type="text" name="smoothness_error" class="form-control" id="smoothness_error" placeholder="smoothness error" required="required" />
+  </div>
+
+    	<div class="form-group">
+          <label for="sg" class="form-label">Concavity error</label><br>
+        <input type="text" name="concavity_error" class="form-control" placeholder="concavity error" required="required" />
+      </div>
+
+		<div class="form-group">
+          <label for="symmetry_error" class="form-label">symmetry error</label><br>
+    	<input type="text" name="symmetry_error" class="form-control" id="symmetry_error" placeholder="symmetry error" required="required" />
+    </div>
+
+    <div class="form-group">
+          <label for="fractal_dimension_error" class="form-label">fractal dimension error</label><br>
+        <input type="text" name="fractal_dimension_error" class="form-control" id="fractal_dimension_error" placeholder="fractal dimension error" required="required" />
+      </div>
+
+		<div class="form-group">
+          <label for="worst_smoothness" class="form-label">worst smoothness</label><br>
+    	<input type="text" name="worst_smoothness" class="form-control" id="worst_smoothness" placeholder="worst smoothness" required="required" />
+    </div>
+       
+       <div class="form-group">
+          <label for="worst_concavity" class="form-label">worst concavity</label> <br>
+		<input type="text" name="worst_concavity" class="form-control" id="worst_concavity" placeholder="worst concavity" required="required" />
+  </div>
+    	
+      <div class="form-group">
+          <label for="worst_symmetry" class="form-label">worst symmetry</label><br>
+        <input type="text" name="worst_symmetry" class="form-control" id="worst_symmetry" placeholder="worst symmetry" required="required" />
+      </div>
+
+      <div class="form-group">
+          <label for="worst_fractal_dimension" class="form-label">worst fractal dimension</label><br>
+		<input type="text" name="worst_fractal_dimension" class="form-control" id="worst_fractal_dimension" placeholder="worst fractal dimension" required="required" />
+  </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-danger ">Predict</button>
+    </form>
+    <br>
+    <br>
+
+    <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+<br>
+<br>
+
+ {% endblock %}
+
+</body>
+</html>
